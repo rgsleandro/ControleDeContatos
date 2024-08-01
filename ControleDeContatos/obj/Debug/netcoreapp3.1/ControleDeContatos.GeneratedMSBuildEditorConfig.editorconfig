@@ -1,3 +1,5 @@
 is_global = true
 build_property.RootNamespace = ControleDeContatos
 build_property.ProjectDir = C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
