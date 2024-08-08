@@ -35,33 +35,34 @@ namespace ControleDeContatos.Repositorio
         public ContatoModel Atualizar(ContatoModel contato)
         {
             ContatoModel contatoDB = ListarPorId(contato.Id);
-            if (contatoDB != null)
+            if (contatoDB == null) // Corrigido: Se o contato não for encontrado, lança uma exceção
             {
-                contatoDB.Nome = contato.Nome;
-                contatoDB.Email = contato.Email;
-                contatoDB.Telefone = contato.Telefone;
-
-                _context.Contatos.Update(contatoDB);
-                _context.SaveChanges();
-
-                return contatoDB;
+                throw new Exception("Contato não encontrado para atualização.");
             }
 
-            throw new System.Exception("Houve um erro na atualização do contato");
+            contatoDB.Nome = contato.Nome;
+            contatoDB.Email = contato.Email;
+            contatoDB.Telefone = contato.Telefone;
+
+            _context.Contatos.Update(contatoDB);
+            _context.SaveChanges();
+
+            return contatoDB;
         }
 
         public bool Apagar(int id)
         {
             ContatoModel contatoDB = ListarPorId(id);
-            if (contatoDB != null)
+            if (contatoDB == null) // Corrigido: Se o contato não for encontrado, lança uma exceção
             {
-                _context.Contatos.Remove(contatoDB);
-                _context.SaveChanges();
-                return true;
+                throw new Exception("Contato não encontrado para exclusão.");
             }
 
-            throw new System.Exception("Houve um erro na deleção do contato");
+            _context.Contatos.Remove(contatoDB);
+            _context.SaveChanges();
+            return true;
         }
+
 
         public ContatoModel Editar(ContatoModel contato)
         {

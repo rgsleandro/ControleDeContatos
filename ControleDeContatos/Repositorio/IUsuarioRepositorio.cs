@@ -8,11 +8,10 @@ namespace ControleDeContatos.Repositorio
 {
     public interface IUsuarioRepositorio
     {
-        UsuarioModel ListarPorId(int id);
         List<UsuarioModel> BuscarTodos();
+        UsuarioModel BuscarPorId(int id);
         UsuarioModel Adicionar (UsuarioModel usuario);
         UsuarioModel Atualizar (UsuarioModel usuario);
-        UsuarioModel Editar (UsuarioModel usuario);
         bool Apagar(int id);
     }
 }

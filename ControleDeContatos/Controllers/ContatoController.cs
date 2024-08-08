@@ -42,19 +42,19 @@ namespace ControleDeContatos.Controllers
                 bool apagado = _contatoRepositorio.Apagar(id);
                 if (apagado)
                 {
-                    TempData["MensagemSucesso"] = "Contato apagado com sucesso";
+                    TempData["MensagemSucesso"] = "Contato excluido com sucesso";
                 }
                 else
                 {
-                    TempData["MensagemErro"] = "Ops, não foi possivel apagar seu contado";
+                    TempData["MensagemErro"] = "Ops, não foi possivel excluir seu contado";
                 }
                 return RedirectToAction("Index");
             }
-            catch(System.Exception erro)
+            catch(Exception erro)
             {
-                TempData["MensagemErro"] = $"Ops, não foi possivel apagar seu contado, mais detatlhes do erro: {erro.Message}";
-                return RedirectToAction("Index");
+                TempData["MensagemErro"] = $"Ops, não foi possivel excluir seu contado, mais detatlhes do erro: {erro.Message}";                
             }
+            return RedirectToAction("Index");
         }
 
 
@@ -73,7 +73,7 @@ namespace ControleDeContatos.Controllers
 
                 return View(contato);
             }
-            catch (System.Exception erro)
+            catch (Exception erro)
             {
                 TempData["MensagemErro"] = $"Ops, não foi possivel cadastrar seu contado, tente novamente, detalhe do erro: {erro.Message}";
                 return RedirectToAction("Index");
@@ -88,7 +88,7 @@ namespace ControleDeContatos.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    contato = _contatoRepositorio.Editar(contato);
+                    contato = _contatoRepositorio.Atualizar(contato);
                     TempData["MensagemSucesso"] = "Contato alterado com sucesso";
                     return RedirectToAction("Index");
                 }

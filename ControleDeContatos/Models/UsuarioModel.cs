@@ -20,7 +20,7 @@ namespace ControleDeContatos.Models
         [EmailAddress(ErrorMessage = "O e-mail informado não é valido!")]
         public string Email { get; set; }
         [Required(ErrorMessage = "Informe o perfil do usuário")]
-        public PerfilEnum? Perfil { get; set; }
+        public PerfilEnum Perfil { get; set; }
 
         [Required(ErrorMessage = "Digite a senha do usuário")]
         public string Senha { get; set; }

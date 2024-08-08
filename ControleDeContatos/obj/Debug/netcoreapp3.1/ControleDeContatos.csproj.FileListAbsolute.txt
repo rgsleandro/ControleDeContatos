@@ -79,7 +79,6 @@ C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\bin\Debug\netc
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Razor\Views\Contato\ApagarConfirmacao.cshtml.g.cs
-C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Index.cshtml.g.cs
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Criar.cshtml.g.cs
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\ControleDeContatos.sourcelink.json
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\staticwebassets\ControleDeContatos.StaticWebAssets.Pack.cache
@@ -90,3 +89,4 @@ C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netc
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Controle.6EBC8F93.Up2Date
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\ApagarConfirmacao.cshtml.g.cs
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Editar.cshtml.g.cs
+C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Index.cshtml.g.cs

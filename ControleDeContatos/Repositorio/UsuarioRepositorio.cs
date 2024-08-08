@@ -15,7 +15,7 @@ namespace ControleDeContatos.Repositorio
         {
             _context = bancoContext;
         }
-        public UsuarioModel ListarPorId(int id)
+        public UsuarioModel BuscarPorId(int id)
         {
             return _context.Usuarios.FirstOrDefault(x => x.Id == id);
         }
@@ -27,7 +27,6 @@ namespace ControleDeContatos.Repositorio
 
         public UsuarioModel Adicionar(UsuarioModel usuario)
         {
-            usuario.DataCadastro=DateTime.Now;
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
             return usuario;
@@ -35,40 +34,30 @@ namespace ControleDeContatos.Repositorio
 
         public UsuarioModel Atualizar(UsuarioModel usuario)
         {
-            UsuarioModel usuarioDB = ListarPorId(usuario.Id);
-            if (usuarioDB != null)
-            {
-                usuarioDB.Nome = usuario.Nome;
-                usuarioDB.Email = usuario.Email;
-                usuarioDB.Login = usuario.Login;
-                usuarioDB.Perfil = usuario.Perfil;
-                usuarioDB.DataAtualizacao = DateTime.Now;
+            UsuarioModel usuarioDB = BuscarPorId(usuario.Id);
+            if (usuarioDB == null) throw new Exception("Usuário não encontrado para atualização.");
+            
 
-                _context.Usuarios.Update(usuarioDB);
-                _context.SaveChanges();
+            usuarioDB.Nome = usuario.Nome;
+            usuarioDB.Email = usuario.Email;
+            usuarioDB.Login = usuario.Login;
+            usuarioDB.Perfil = usuario.Perfil;  
+            usuarioDB.DataAtualizacao = DateTime.Now;
 
-                return usuarioDB;
-            }
+            _context.SaveChanges();
 
-            throw new System.Exception("Houve um erro na atualização do contato");
+            return usuarioDB;
         }
 
         public bool Apagar(int id)
         {
-            UsuarioModel usuarioDB = ListarPorId(id);
-            if (usuarioDB != null)
-            {
-                _context.Usuarios.Remove(usuarioDB);
-                _context.SaveChanges();
-                return true;
-            }
+            UsuarioModel usuarioDB = BuscarPorId(id);
+            if (usuarioDB == null) throw new Exception("Usuário não encontrado para exclusão.");
+            
 
-            throw new System.Exception("Houve um erro na deleção do contato");
-        }
-
-        public UsuarioModel Editar(UsuarioModel usuario)
-        {
-            throw new NotImplementedException();
+            _context.Usuarios.Remove(usuarioDB);
+            _context.SaveChanges();
+            return true;
         }
     }
 }

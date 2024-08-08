@@ -1,12 +1,12 @@
 ﻿@model List<UsuarioModel>
 @{
-    ViewData["Title"] = "Listagem de Usuários";
+    ViewData["Title"] = "Listagem de usuários";
 }
 
 <div class="text-center">
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-        <a class=" btn btn-primary" role="button" asp-controller="Usuario" asp-action="Criar">Adicionar novo usuário</a>
+        <a class=" btn btn-primary" role="button" asp-controller="Usuario" asp-action="Criar">Adicionar novo usuario</a>
     </div>
 
     <br />
@@ -30,16 +30,15 @@
 
     <br />
 
-    <h1 class="display-4">Listagem de Usuários</h1>
+    <h1 class="display-4">Lista de usuarios</h1>
 
     <table class="display" id="table-usuarios" style="width:100%">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
-                <th scope="col">Login</th>
-                <th scope="col">Email</th>
-                <th scope="col">Data de cadastro</th>
+                <th scope="col">E-mail</th>
+                <th scope="col">Celular</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -51,9 +50,8 @@
                     <tr>
                         <th scope="row">@usuario.Id</th>
                         <td>@usuario.Nome</td>
-                        <td>@usuario.Login</td>
                         <td>@usuario.Email</td>
-                        <td>@usuario.DataCadastro </td>
+                        <td>@usuario.Login</td>
                         <td>
                             <div class="btn-group" role="group">
                                 <a role="button" class="btn btn-primary" asp-route-id="@usuario.Id" asp-controller="Usuario" asp-action="Editar">Editar</a>
@@ -62,10 +60,6 @@
                         </td>
                     </tr>
                 }
-            }
-            else
-            {
-                <tr class="odd"><td valign="top"    colspan="5">Nenhum contato encontrado</td></tr>
             }
         </tbody>
     </table>
