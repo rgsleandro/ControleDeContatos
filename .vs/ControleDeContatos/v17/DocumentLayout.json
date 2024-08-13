@@ -1,37 +1,12 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\regis\\source\\repos\\ControleDeContatos\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{298C9F70-EA20-4E88-B900-9FB08A803093}|ControleDeContatos\\ControleDeContatos.csproj|c:\\users\\regis\\source\\repos\\controledecontatos\\controledecontatos\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{298C9F70-EA20-4E88-B900-9FB08A803093}|ControleDeContatos\\ControleDeContatos.csproj|solutionrelative:controledecontatos\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UsuarioController.cs",
-              "DocumentMoniker": "C:\\Users\\regis\\source\\repos\\ControleDeContatos\\ControleDeContatos\\Controllers\\UsuarioController.cs",
-              "RelativeDocumentMoniker": "ControleDeContatos\\Controllers\\UsuarioController.cs",
-              "ToolTip": "C:\\Users\\regis\\source\\repos\\ControleDeContatos\\ControleDeContatos\\Controllers\\UsuarioController.cs",
-              "RelativeToolTip": "ControleDeContatos\\Controllers\\UsuarioController.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAQwAwAAABBAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-07T22:49:19.817Z",
-              "EditorCaption": ""
-            }
-          ]
-        }
-      ]
+      "DocumentGroups": []
     }
   ]
 }

@@ -90,3 +90,5 @@ C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netc
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\ApagarConfirmacao.cshtml.g.cs
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Editar.cshtml.g.cs
 C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Razor\Views\Usuario\Index.cshtml.g.cs
+C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Razor\Views\Login\Index.cshtml.g.cs
+C:\Users\regis\source\repos\ControleDeContatos\ControleDeContatos\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LayoutDeslogado.cshtml.g.cs

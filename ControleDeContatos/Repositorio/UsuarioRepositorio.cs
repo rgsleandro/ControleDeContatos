@@ -15,6 +15,10 @@ namespace ControleDeContatos.Repositorio
         {
             _context = bancoContext;
         }
+        public UsuarioModel BuscarPorLogin(string login)
+        {
+            return _context.Usuarios.FirstOrDefault(x => x.Login.ToUpper ()== login.ToLower());
+        }
         public UsuarioModel BuscarPorId(int id)
         {
             return _context.Usuarios.FirstOrDefault(x => x.Id == id);
@@ -27,6 +31,7 @@ namespace ControleDeContatos.Repositorio
 
         public UsuarioModel Adicionar(UsuarioModel usuario)
         {
+            usuario.DataCadastro = DateTime.Now;
             _context.Usuarios.Add(usuario);
             _context.SaveChanges();
             return usuario;
@@ -35,6 +40,7 @@ namespace ControleDeContatos.Repositorio
         public UsuarioModel Atualizar(UsuarioModel usuario)
         {
             UsuarioModel usuarioDB = BuscarPorId(usuario.Id);
+
             if (usuarioDB == null) throw new Exception("Usuário não encontrado para atualização.");
             
 
@@ -44,6 +50,7 @@ namespace ControleDeContatos.Repositorio
             usuarioDB.Perfil = usuario.Perfil;  
             usuarioDB.DataAtualizacao = DateTime.Now;
 
+            _context.Usuarios.Update(usuarioDB);
             _context.SaveChanges();
 
             return usuarioDB;

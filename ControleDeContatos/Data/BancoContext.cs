@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ControleDeContatos.Data
 {
-    public class BancoContext :DbContext
+    public class BancoContext : DbContext
     {
         public BancoContext(DbContextOptions options) : base(options)
         {

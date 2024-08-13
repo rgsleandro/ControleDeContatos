@@ -18,11 +18,16 @@ namespace ControleDeContatos.Controllers
         public IActionResult Index()
         {
             List<UsuarioModel> usuarios = _usuarioRepositorio.BuscarTodos();
-            return View();
+            return View(usuarios);
         }
         public IActionResult Criar()
         {
             return View();
+        }
+        public IActionResult Editar(int id)
+        {
+            UsuarioModel usuario=_usuarioRepositorio.BuscarPorId(id);
+            return View(usuario);
         }
         [HttpPost]
         public IActionResult Criar(UsuarioModel usuario)
@@ -33,7 +38,7 @@ namespace ControleDeContatos.Controllers
                 if (ModelState.IsValid)
                 {
                     _usuarioRepositorio.Adicionar(usuario);
-                    TempData["MensagemSucesso"] = "Contato cadastrado com sucesso";
+                    TempData["MensagemSucesso"] = "Usuário cadastrado com sucesso";
                     return RedirectToAction("Index");
                 }
 
@@ -41,11 +46,66 @@ namespace ControleDeContatos.Controllers
             }
             catch (Exception erro)
             {
-                TempData["MensagemErro"] = $"Ops, não foi possivel cadastrar seu contado, tente novamente, detalhe do erro: {erro.Message}";
+                TempData["MensagemErro"] = $"Ops, não foi possivel cadastrar seu usuário, tente novamente, detalhe do erro: {erro.Message}";
                 return RedirectToAction("Index");
 
             }
+        }
+        public IActionResult ApagarConfirmacao(int id)
+        {
+            UsuarioModel usuario = _usuarioRepositorio.BuscarPorId(id);
+            return View(usuario);
+        }
+        public IActionResult Apagar(int id)
+        {
+            try
+            {
+                bool apagado = _usuarioRepositorio.Apagar(id);
+                if (apagado)
+                {
+                    TempData["MensagemSucesso"] = "Usuário excluido com sucesso";
+                }
+                else
+                {
+                    TempData["MensagemErro"] = "Ops, não foi possivel excluir seu usuário";
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não foi possivel excluir seu contado, mais detatlhes do erro: {erro.Message}";
+            }
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public IActionResult Editar (UsuarioSemSenhaModel usuarioSemSenhaModel)
+        {
+            try
+            {
+                UsuarioModel usuario =  null;
 
+                if (ModelState.IsValid)
+                {
+                    usuario = new UsuarioModel()
+                    {
+                        Id = usuarioSemSenhaModel.Id,
+                        Nome = usuarioSemSenhaModel.Nome,
+                        Login = usuarioSemSenhaModel.Login,
+                        Email = usuarioSemSenhaModel.Email,
+                        Perfil = usuarioSemSenhaModel.Perfil,
+                    };
+
+                    usuario = _usuarioRepositorio.Atualizar(usuario);
+                    TempData["MensagemSucesso"] = "Usuário alterado com sucesso";
+                    return RedirectToAction("Index");
+                }
+                return View(usuario);
+            }
+            catch (Exception erro)
+            {
+                TempData["MensagemErro"] = $"Ops, não foi possivel atualizar seu contado, tente novamente, detalhe do erro: {erro.Message}";
+                return RedirectToAction("Index");
+            }
         }
     }
 }
